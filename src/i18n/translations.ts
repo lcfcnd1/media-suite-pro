@@ -83,6 +83,7 @@ export interface TranslationsType {
     duration: string;
     size: string;
     format: string;
+    thumbnail: string;
   };
   musicDownloader: {
     title: string;
@@ -228,6 +229,7 @@ export const translations = {
       duration: 'Duration',
       size: 'Estimated Size',
       format: 'Format',
+      thumbnail: 'Thumbnail',
     },
 
     // Music Downloader
@@ -380,6 +382,7 @@ export const translations = {
       duration: 'Duración',
       size: 'Tamaño Estimado',
       format: 'Formato',
+      thumbnail: 'Miniatura',
     },
 
     // Music Downloader

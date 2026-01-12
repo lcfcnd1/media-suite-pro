@@ -206,18 +206,33 @@ const VideoDownloader: React.FC = () => {
           <HardDrive className="h-5 w-5 text-primary" />
           {t.videoDownloader.videoInfo}
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-          <div>
-            <p className="text-muted-foreground">{t.videoDownloader.quality}</p>
-            <p className="font-medium text-card-foreground">{quality}</p>
-          </div>
-          <div>
-            <p className="text-muted-foreground">{t.videoDownloader.size}</p>
-            <p className="font-medium text-card-foreground">~250 MB</p>
-          </div>
-          <div>
-            <p className="text-muted-foreground">{t.videoDownloader.format}</p>
-            <p className="font-medium text-card-foreground">MP4</p>
+        <div className="flex flex-col sm:flex-row gap-6">
+          {/* Thumbnail */}
+          {videoInfo && (
+            <div className="flex-shrink-0">
+              <p className="text-muted-foreground text-sm mb-2">{t.videoDownloader.thumbnail}</p>
+              <img 
+                src={videoInfo.thumbnail} 
+                alt={videoInfo.title}
+                className="w-32 h-20 rounded-lg object-cover border border-border"
+              />
+            </div>
+          )}
+          
+          {/* Info grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm flex-1">
+            <div>
+              <p className="text-muted-foreground">{t.videoDownloader.quality}</p>
+              <p className="font-medium text-card-foreground">{quality}</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground">{t.videoDownloader.size}</p>
+              <p className="font-medium text-card-foreground">~250 MB</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground">{t.videoDownloader.format}</p>
+              <p className="font-medium text-card-foreground">MP4</p>
+            </div>
           </div>
         </div>
       </div>
